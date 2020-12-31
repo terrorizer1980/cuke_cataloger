@@ -26,7 +26,10 @@ else
   gem 'rake', '~> 13.0'
   gem 'thor', '~> 1.0'
   gem 'cql', '~> 1.0'
-  gem 'cuke_modeler', '~> 3.0'
+  # Locking < 3 given that cuke_modeler ~> 3.0
+  # requires cucumber 4 
+  # https://github.com/enkessler/cuke_modeler/issues/6
+  gem 'cuke_modeler', '< 3.0'
 end
 
 if RUBY_VERSION =~ /^1\./

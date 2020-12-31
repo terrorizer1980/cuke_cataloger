@@ -18,7 +18,10 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'cuke_modeler', '>= 0.2', '< 4.0'
+  # Locking < 3 given that cuke_modeler ~> 3.0
+  # requires cucumber 4
+  # https://github.com/enkessler/cuke_modeler/issues/6
+  spec.add_runtime_dependency 'cuke_modeler', '>= 0.2', '< 3.0'
   spec.add_runtime_dependency 'cql', '>= 1.0.1', '< 2.0'
   spec.add_runtime_dependency 'rake', '< 14.0'
   spec.add_runtime_dependency 'thor', '< 2.0'
