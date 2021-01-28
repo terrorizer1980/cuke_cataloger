@@ -238,7 +238,7 @@ module CukeCataloger
 
     def apply_tag_if_needed(test)
       unless has_id_tag?(test)
-        tag = "#{@tag_prefix}#{@next_index}"
+        tag = "#{@tag_prefix}#{@next_index}#{Time.now.utc.to_i}"
         @next_index += 1
 
         tag_test(test, tag, (' ' * determine_test_indentation(test)))
